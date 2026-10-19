@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webpod
+  namespace: default
+  labels:
+    app: web
+    env: dev
+spec:
+  containers:
+   - name: webc
+     image: httpd:latest
