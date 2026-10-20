@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs
+  namespace: default
+spec:
+ replicas: 4
+ selector:
+  matchExpressions:
+    - key: app
+      operator: In
+      values:
+       - web
+       - myapp
+ template:
+  metadata:
+   labels:
+     app: web
+  spec:
+    containers:
+     - name: webc
+       image: httpd:latest
