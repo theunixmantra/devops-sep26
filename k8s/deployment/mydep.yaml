@@ -16,3 +16,13 @@ spec:
     containers:
      - name: webc
        image: httpd:latest
+========================================================
+kubectl create -f mydep.yaml		// create/deploy object using manifest file
+kubectl appply -f mydep.yaml                // Apply changes of the deployment manifest
+kubectl rollout status deploy mydep	    // See rollout status of the deployment
+kubectl rollout history deploy mydep         // get history of the deployment
+kubectl rollout undo deploy mydep            // undo the changes of the application
+kubectl rollout undo deploy mydep --to-version=<revision number>    // revert changes to specific revision
+kubectl delete deploy mydep		  // delete deployment
+kubectl rollout history deploy mydep --revision=3    // see details of the image inside the deployment
+
