@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newpod
+  namespace: default
+spec:
+  containers:
+     - name: webcontainer
+       image: nginx:latest
+  nodeSelector:
+     env: nonprod
