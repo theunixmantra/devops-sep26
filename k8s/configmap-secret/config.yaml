@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mariapod
+  namespace: default
+spec:
+  containers:
+    - name: dbcontainer
+      image: mariadb:latest
+      envFrom:
+        - configMapRef:
+           name: dbconfig
