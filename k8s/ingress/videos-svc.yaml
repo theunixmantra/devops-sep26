@@ -1,0 +1,12 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: videos-svc
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: videos
+  ports:
+    - port: 80
+      targetPort: 80
