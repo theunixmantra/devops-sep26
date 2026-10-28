@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exam-dep
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exam
+  template:
+     metadata:
+       labels:
+         app: exam
+     spec:
+       containers:
+         - name: exam-c
+           image: httpd:latest
+           ports:
+             - containerPort: 80
+    
