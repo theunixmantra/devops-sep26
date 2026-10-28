@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: videos-dep
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: videos
+  template:
+     metadata:
+       labels:
+         app: videos
+     spec:
+       containers:
+         - name: videos-c
+           image: nginx:latest
+           ports:
+             - containerPort: 80
+    
