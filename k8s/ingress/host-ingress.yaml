@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: skynetlinux-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: skynetsolutions.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: exam-svc
+                port:
+                  number: 80
+
+    - host: exam.skynetsolutions.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: exam-svc
+                port:
+                  number: 80
+
+    - host: videos.skynetsolutions.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: videos-svc
+                port:
+                  number: 80
+
+    - host: about.skynetsolutions.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: videos-svc
+                port:
+                  number: 80
